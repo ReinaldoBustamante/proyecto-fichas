@@ -82,7 +82,7 @@ export const Formulario = (props) => {
             })
         }
         else{
-            Axios.post('http://127.0.0.1:5000/register',{
+            Axios.post('https://api-rest-fedent.herokuapp.com/register',{
                 username: usuario.username,
                 password: usuario.password,
                 nombre: usuario.nombre,

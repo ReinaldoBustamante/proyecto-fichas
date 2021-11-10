@@ -27,7 +27,7 @@ export const BuscarPaciente = (props) => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault()
-        Axios.get(`http://localhost:5000/pacientes/${rut}`).then( (response) => {
+        Axios.get(`https://api-rest-fedent.herokuapp.com/${rut}`).then( (response) => {
             if (response.data.length !== 0){
                 setpaciente(response.data[0])
                 Swal.fire(

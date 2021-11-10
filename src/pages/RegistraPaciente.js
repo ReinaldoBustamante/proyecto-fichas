@@ -66,7 +66,7 @@ export const RegistraPaciente= () => {
             })
         }
         else{
-            Axios.post('http://127.0.0.1:5000/registrarPaciente',{
+            Axios.post('https://api-rest-fedent.herokuapp.com/registrarPaciente',{
                 id_odontologo: datosBasicos.id_odontologo,
                 nombre: datosBasicos.nombre,
                 sexo: datosBasicos.sexo,
