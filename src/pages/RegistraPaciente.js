@@ -85,7 +85,7 @@ export const RegistraPaciente= () => {
                 'Usuario Registrado Correctamente!',
                 'se registro el usuario: '+datosBasicos.nombre,
                 'success'
-              )
+            )
             history.push('/')
         }
     }

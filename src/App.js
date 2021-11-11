@@ -15,6 +15,8 @@ import { RegistrarUsuario } from './pages/RegistrarUsuario'
 import { Paciente } from './pages/Paciente'
 import { Ficha } from './pages/Ficha'
 import { Archivos } from './pages/Archivos'
+import { RegistrosPacientes } from './pages/RegistrosPacientes'
+import { RegistrosUsuarios } from './pages/RegistrosUsuarios'
 
 
 
@@ -81,6 +83,18 @@ export const App = () => {
           <RutaPrivada path='/editar-paciente' loginStatus={loginStatus}>
 
             <Archivos />
+    
+          </RutaPrivada>
+
+          <RutaPrivada path='/registros-pacientes' loginStatus={loginStatus}>
+
+            <RegistrosPacientes />
+    
+          </RutaPrivada>
+
+          <RutaPrivada path='/registros-usuarios' loginStatus={loginStatus}>
+
+            <RegistrosUsuarios />
     
           </RutaPrivada>
 

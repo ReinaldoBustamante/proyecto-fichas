@@ -9,7 +9,8 @@ import {
 export const Navbar = (props) => {
 
     const {setloginStatus, usuario} = props
-    const {username} = usuario
+    const {rol} = usuario
+    console.log(rol)
 
     const cerrarSesion = () =>{
         setloginStatus(false)
@@ -37,7 +38,7 @@ export const Navbar = (props) => {
 
 
                     {/* Menu de navegacion */}
-
+                    {rol === "Administrador"?
                     <div className = 'collpase navbar-collapse' id='menu'>
                         <ul className='navbar-nav me-auto mb-2 mb-lg-0 '> 
 
@@ -48,19 +49,45 @@ export const Navbar = (props) => {
                             <li className='nav-item'>
                                 <Link to='/registrar-paciente' className='nav-link'>Registrar Paciente</Link>
                             </li>
-                            {username === 'admin'?
+                        
+                            
                             <li className='nav-item'>
                                 <Link to='/registrar-usuario' className='nav-link'>Registrar Usuario</Link>
                             </li>
-                            :
-                            null
-                            }
+                            <li class="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Registros
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><Link to='/registros-usuarios' className='dropdown-item'>Usuarios</Link></li>
+                                    <li><Link to='/registros-pacientes' className='dropdown-item'>Pacientes</Link></li>
+                                    
+                                </ul>
+                            </li>
+                            
+                        
                             
                         </ul>
                         <button type='button' onClick={cerrarSesion} className='btn btn-outline-danger' >Cerrar Sesion</button>
-                        
-                        
+
                     </div>
+                    :
+                    <div className = 'collpase navbar-collapse' id='menu'>
+                        <ul className='navbar-nav me-auto mb-2 mb-lg-0 '> 
+
+                            <li className='nav-item'>
+                                <Link to='/' className='nav-link'>Inicio</Link>
+                            </li>
+
+                            <li className='nav-item'>
+                                <Link to='/registrar-paciente' className='nav-link'>Registrar Paciente</Link>
+                            </li>             
+                        </ul>
+                        <button type='button' onClick={cerrarSesion} className='btn btn-outline-danger' >Cerrar Sesion</button>
+
+                    </div>
+                    }
+                    
 
 
                 </div>
