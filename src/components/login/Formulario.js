@@ -25,7 +25,7 @@ export const Formulario = (props) => {
                 <div className='row mt-3'>
                     <div className='col'>
                         <label htmlFor=''>Contraseña</label>
-                        <input type='text' className='form-control' name='password' onChange = {handleOnChange} />
+                        <input type='password' className='form-control' name='password' onChange = {handleOnChange} />
                     </div>
                 </div>
                 <div className='row mt-3'>
