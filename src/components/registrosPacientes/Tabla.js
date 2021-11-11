@@ -28,7 +28,7 @@ export const Tabla = () => {
 
     return (
         <div className="mt-5">
-            <table class="table">
+            <table className="table">
                 <thead>
                     <tr>
                     <th scope="col">Rut</th>
