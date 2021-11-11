@@ -13,6 +13,8 @@ import {
 } from "react-router-dom";
 import { RegistrarUsuario } from './pages/RegistrarUsuario'
 import { Paciente } from './pages/Paciente'
+import { Ficha } from './pages/Ficha'
+import { Archivos } from './pages/Archivos'
 
 
 
@@ -61,6 +63,24 @@ export const App = () => {
           <RutaPrivada path='/paciente' loginStatus={loginStatus}>
 
             <Paciente paciente = { paciente }/>
+    
+          </RutaPrivada>
+
+          <RutaPrivada path='/ficha-clinica' loginStatus={loginStatus}>
+
+            <Ficha />
+    
+          </RutaPrivada>
+
+          <RutaPrivada path='/archivos' loginStatus={loginStatus}>
+
+            <Archivos />
+    
+          </RutaPrivada>
+
+          <RutaPrivada path='/editar-paciente' loginStatus={loginStatus}>
+
+            <Archivos />
     
           </RutaPrivada>
 
