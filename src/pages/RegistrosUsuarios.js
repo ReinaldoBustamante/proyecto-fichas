@@ -1,10 +1,15 @@
 import React from 'react'
+import { Tabla } from '../components/registrosUsuarios/Tabla'
 
 
 export const RegistrosUsuarios = () => {
     return (
-        <div>
-            Registros de usuarios
+        <div className="container">
+            <div className="row">
+                <div className="col">
+                    <Tabla />
+                </div>
+            </div>
         </div>
     )
 }

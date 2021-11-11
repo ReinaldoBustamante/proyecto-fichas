@@ -54,11 +54,11 @@ export const Navbar = (props) => {
                             <li className='nav-item'>
                                 <Link to='/registrar-usuario' className='nav-link'>Registrar Usuario</Link>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Registros
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <li><Link to='/registros-usuarios' className='dropdown-item'>Usuarios</Link></li>
                                     <li><Link to='/registros-pacientes' className='dropdown-item'>Pacientes</Link></li>
                                     
