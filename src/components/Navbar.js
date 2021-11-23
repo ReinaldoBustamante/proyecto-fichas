@@ -38,7 +38,7 @@ export const Navbar = (props) => {
 
 
                     {/* Menu de navegacion */}
-                    {rol === "administrador"?
+                    {rol === "Administrador"?
                     <div className = 'collpase navbar-collapse' id='menu'>
                         <ul className='navbar-nav me-auto mb-2 mb-lg-0 '> 
 
