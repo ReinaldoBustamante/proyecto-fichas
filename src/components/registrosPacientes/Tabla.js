@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
-import Swal from 'sweetalert2'
+//import Swal from 'sweetalert2'
 
 export const Tabla = () => {
 
