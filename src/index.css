@@ -24,16 +24,16 @@
     background-color: #0f92fa;
 }
 
-.card-text{
-    padding-left: 160px;
 
-}
-.card-element{
-    margin-top: 30px ;
-}
 .pad{
     padding-left: 50px;
 }
 .pad-r{
     padding-right: 50px;
+}
+.card-text{
+    padding-left: 15%;
+}
+.c-n{
+    color: rgb(7, 255, 7);
 }

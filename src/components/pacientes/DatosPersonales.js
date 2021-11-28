@@ -3,6 +3,7 @@ import React from 'react'
 export const DatosPersonales = (props) => {
     const {paciente} = props
     console.log(paciente)
+    
     return (
         <div className="card text-white color-1 mb-3">
             <div className="card-header text-center"><span className="h4">{paciente.nombre}</span></div>
