@@ -62,7 +62,7 @@ export const App = () => {
     
           </RutaPrivada>
 
-          <RutaPrivada path='/paciente' loginStatus={loginStatus}>
+          <RutaPrivada path='/paciente/:rut' loginStatus={loginStatus}>
 
             <Paciente paciente = { paciente }/>
     

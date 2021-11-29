@@ -6,9 +6,9 @@ export const Inicio = (props) => {
     const {usuario, setpaciente} = props
     const {nombre, rut, correo, telefono, rol} = usuario
     return (
-        <div className='container-fluid'>
+        <div className='container-flush'>
           
-            <div className= "row mt-4">
+            <div className= "row">
                 <div className="col-12 mb-3">
                 < DatosPersonales nombre={nombre} rut={rut} correo = {correo} telefono = {telefono} rol={rol} />
                

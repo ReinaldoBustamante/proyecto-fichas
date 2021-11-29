@@ -79,14 +79,22 @@ export const RegistraPaciente= () => {
                 profesion: datosBasicos.profesion,
                 lugarTrabajo: datosBasicos.lugarTrabajo
             }).then((response) => {
-                console.log(response)
+                if(response.status === 200){
+                    Swal.fire(
+                        'Usuario Registrado Correctamente!',
+                        'se registro el usuario: '+datosBasicos.nombre,
+                        'success'
+                    )
+                    history.push(`/paciente/${datosBasicos.rut}`)
+                }
+                
             })
-            Swal.fire(
-                'Usuario Registrado Correctamente!',
-                'se registro el usuario: '+datosBasicos.nombre,
-                'success'
-            )
-            history.push('/')
+            
+            
+            
+            
+        
+           
         }
     }
 
@@ -94,27 +102,16 @@ export const RegistraPaciente= () => {
         <div className='m-4'>
             <h2>Registro de Paciente</h2>
             <div className='container mt-5'>
-            
-            <div className='row d-flex justify-content-center'>
-                <div className='col-12'>
+                
+                <div className='row d-flex justify-content-center'>
+                    <div className='col-12'>
+                        {/*FORMULARIO */}
 
-                    {/* CARD */}
+                        <form action =""  className='was-validated' onSubmit={handleOnSubmit} noValidate>
+                            <Accordion datosBasicos={datosBasicos} setDatosBasicos={setDatosBasicos} />
+                        </form>
 
-                    <div className='card shadow mb-5'>
-                        <div className='card-header'><h4>Ingrese datos del Paciente</h4></div>
-                            <div className='body'>
-
-                                {/*FORMULARIO */}
-
-                                <form action =""  className='was-validated' onSubmit={handleOnSubmit} noValidate>
-                                    <Accordion datosBasicos={datosBasicos} setDatosBasicos={setDatosBasicos} />
-                                </form>
-
-              
-                            </div>
-                        </div>
-
-
+                
                     </div>
                 </div>
             </div>

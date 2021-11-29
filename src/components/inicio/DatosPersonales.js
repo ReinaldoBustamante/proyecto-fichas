@@ -1,12 +1,13 @@
 import React from 'react'
+
 import "../../index.css"
 export const DatosPersonales = (props) => {
     const {nombre, rut, correo, telefono, rol} = props
     return (
-        <div className='container-fluid'>
-                    <div className="card shadow ">
+        <div className='container-flush'>
+                    <div className="">
                      
-                        <div className="card-body d-grid color-1 text-white border">
+                        <div className="card-body d-grid color-1 text-white ">
                             <h3 className="text-center">Bienvenido <span className="c-n">{nombre}</span></h3>
                             <div className='row d-flex card-text '>
                                 <div className='col-6 card-element'>

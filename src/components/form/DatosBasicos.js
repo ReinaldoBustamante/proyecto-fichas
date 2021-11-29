@@ -94,50 +94,40 @@ export const DatosBasicos = (props) => {
 
             {/* Nombre y Rut y Sexualidad */}
 
-            <div className='row mb-2'>
-                <div className='col'>
+            <div className='row'>
+                <div className='col-12 mb-3'>
                     <div className='form-floating'>
                         <input type='text' name='nombre' id='nombre' className='form-control' placeholder='Ingrese su nombre' onChange={handleOnChange} value={datosBasicos.nombre} required/>
                         <label htmlFor ='nombre'>Nombre</label>
                     </div>
                 </div>
-                <div className='col'>
-                    <div className='col'>
+                <div className='col-12 mb-3'>
+                 
                         <div className='form-floating'>
                             <input type='text' name='rut' id='rut' className='form-control' placeholder='Ingrese su rut ' value={datosBasicos.rut} onChange={handleOnChange} required/>
                             <label htmlFor ='rut'>Rut</label>
                         </div>
-                    </div>
+                
                 </div>
-                <div className='col'>
-                    <div className='form-floating'>
-                        <select name='sexo' id='sexo' className='form-select' aria-label='seleccion sexo ' onChange={handleOnChange}  >
-                            <option value='Hombre'>Hombre</option>
-                            <option value='Mujer'>Mujer</option>
-                            <option value='Otro'>Otro</option>
-                        </select>
-                        <label htmlFor='sexo'>Indique su orientacion sexual</label>
-                        
-                    </div>
-                </div>
+               
             </div>
 
             {/* Edad Telefono y celular */}
 
-            <div className='row mb-2'>
-                <div className='col'>
+            <div className='row'>
+                <div className='col-12 mb-3'>
                     <div className='form-floating '>
                         <input type='text' name='edad' id='edad' className='form-control' placeholder='Indique su edad ' value={datosBasicos.edad} onChange={handleOnChange} required/>
                         <label htmlFor ='edad'>Edad</label>
                     </div>
                 </div>
-                <div className='col'>
+                <div className='col-12 mb-3'>
                     <div className='form-floating'>
                         <input type='text' name='telefono' id='telefono' className='form-control' placeholder='Ingrese su numero telefonico ' value={datosBasicos.telefono} onChange={handleOnChange} required/>
                         <label htmlFor ='telefono'>Telefono</label>
                     </div>
                 </div>
-                <div className='col'>
+                <div className='col-12 mb-3'>
                     <div className='form-floating '>
                         <input type='text' name='celular' id='celular' className='form-control' placeholder='Indique su numero de celular ' value={datosBasicos.celular} onChange={handleOnChange} required/>
                         <label htmlFor ='celular'>Celular</label>
@@ -161,6 +151,27 @@ export const DatosBasicos = (props) => {
                         <label htmlFor ='lugar-trabajo'>Lugar de trabajo</label>
                     </div>
                 </div>
+                <div className='col mb-3'>
+                    <div className='form-floating'>
+                        <input type='text' name='domicilio' id='domicilio' className='form-control' placeholder='Ingrese su Domicilio' value={datosBasicos.domicilio} onChange={handleOnChange} required/>
+                        <label htmlFor ='domicilio'>Domicilio</label>
+                    </div>
+                </div>
+                <div className='col-12 mb-3'>
+                    <div className='form-floating'>
+                        <select name='sexo' id='sexo' className='form-select' aria-label='seleccion sexo ' onChange={handleOnChange}  >
+                            <option value='Hombre'>Hombre</option>
+                            <option value='Mujer'>Mujer</option>
+                            <option value='Otro'>Otro</option>
+                        </select>
+                        <label htmlFor='sexo'>Indique su orientacion sexual</label>
+                        
+                    </div>
+                </div>
+            </div>
+             {/* Domicilio y odontologo responsable */}
+
+             <div className='row mb-2'>
                 <div className='col'>
                     <div className='form-floating'>
                         <select name='estado-civil' id='estado-civil' className='form-select' aria-label='seleccion su estado civil ' onChange={handleOnChange} required>
@@ -170,16 +181,6 @@ export const DatosBasicos = (props) => {
                             <option value='Viudo'>Viudo</option>
                         </select>
                         <label htmlFor='sexo'>Estado Civil</label>
-                    </div>
-                </div>
-            </div>
-             {/* Domicilio y odontologo responsable */}
-
-             <div className='row mb-2'>
-                <div className='col'>
-                    <div className='form-floating'>
-                        <input type='text' name='domicilio' id='domicilio' className='form-control' placeholder='Ingrese su Domicilio' value={datosBasicos.domicilio} onChange={handleOnChange} required/>
-                        <label htmlFor ='domicilio'>Domicilio</label>
                     </div>
                 </div>
                 <div className='col'>
@@ -195,6 +196,12 @@ export const DatosBasicos = (props) => {
                     </div>
                 </div>
                 
+                
+            </div>
+            <div className="row mt-3">
+                <div className="col d-grid">
+                    <button type='submit' className='btn btn-primary' >Confirmar</button>
+                </div>
             </div>
 
 

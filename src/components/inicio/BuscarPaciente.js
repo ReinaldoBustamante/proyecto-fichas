@@ -35,7 +35,7 @@ export const BuscarPaciente = (props) => {
                     'Se encontro el usuario: '+response.data[0].nombre,
                     'success'
                 )
-                history.push('/paciente')
+                history.push(`/paciente/${rut}`)
            }
             else{
                 Toast.fire({

@@ -12,14 +12,8 @@ export const Tabla = () => {
     }, [carga])
 
     const handleOnClick = (e) => {
-        console.log(e.target.id)
-        Axios.delete(`https://api-rest-fedent.herokuapp.com/usuarios/${e.target.id}`)
-        .then(res => {
-            if(res.status === 200){
-                console.log(res)
-                setcarga(carga+1)
-            }
-        })
+        console.log(e.target)
+     
     }
 
     return (
@@ -45,7 +39,7 @@ export const Tabla = () => {
                                 <td >{usuario.rut}</td>
                                 <td >{usuario.correo}</td>
                                 <td >{usuario.rol}</td>
-                                <td><button type="button" className="btn btn-danger" id={usuario.id_usuario} onClick={handleOnClick} >Eliminar</button></td>
+                                <td><button type="button" className="btn btn-danger" id={usuario.id_usuario} rut = {usuario.rut} onClick={handleOnClick} >Eliminar</button></td>
                             </tr>
                             
                         </>
