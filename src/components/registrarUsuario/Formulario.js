@@ -8,7 +8,7 @@ import Swal from 'sweetalert2'
 export const Formulario = (props) => {
 
     const {usuario, setusuario} = props
-
+    console.log(usuario)
     let history = useHistory()
 
 
@@ -85,104 +85,97 @@ export const Formulario = (props) => {
         else if (usuario.rol === "odontologo"){
 
             //Registrar odontolgoo
-            Axios.post('https://api-rest-fedent.herokuapp.com/registrarOdontologo',{
+            Axios.post('https://api-rest-fedent.herokuapp.com/odontologos',{
                 nombre: usuario.nombre,
                 rut: usuario.rut,
                 telefono: usuario.telefono,
                 correo: usuario.correo
             }).then((response) => {
-                console.log(response)
+                if(response.status === 200){
+                    Axios.post('https://api-rest-fedent.herokuapp.com/usuarios',{
+                        username: usuario.username,
+                        password: usuario.password,
+                        nombre: usuario.nombre,
+                        rut: usuario.rut,
+                        telefono: usuario.telefono,
+                        correo: usuario.correo,
+                        rol: usuario.rol
+                    }).then((response) => {
+                        if(response.status === 200){
+                            Swal.fire(
+                                'Usuario Registrado Correctamente!',
+                                'Se registro el odontologo: '+usuario.username,
+                                'success'
+                              )
+                            history.push('/')
+                        }
+                    }).catch(err =>{
+                        console.log(err)
+                    })
+
+                }
             }).catch(err => {
                 console.log(err)
-            })
-
-            //REGISTRAR USUARIO
-            Axios.post('https://api-rest-fedent.herokuapp.com/register',{
+            }) 
+        }
+        else if(usuario.rol === "administrador"){
+            Axios.post('https://api-rest-fedent.herokuapp.com/usuarios',{
                 username: usuario.username,
                 password: usuario.password,
                 nombre: usuario.nombre,
                 rut: usuario.rut,
-                correo: usuario.correo,
                 telefono: usuario.telefono,
+                correo: usuario.correo,
                 rol: usuario.rol
             }).then((response) => {
-                console.log(response)
-            }).catch(err => {
+                if(response.status === 200){
+                    Swal.fire(
+                        'Usuario Registrado Correctamente!',
+                        'Se registro el odontologo: '+usuario.username,
+                        'success'
+                      )
+                    history.push('/')
+                }
+            }).catch(err =>{
                 console.log(err)
-            })
-            
-            Swal.fire(
-                'Usuario Registrado Correctamente!',
-                'Se registro el odontologo: '+usuario.username,
-                'success'
-              )
-            history.push('/')
+            })    
         }
-        else if (usuario.rol === "tons"){
-
-            //Registrar tons
-            Axios.post('https://api-rest-fedent.herokuapp.com/registrarTons',{
+        else if(usuario.rol === "tons"){
+            //Registrar odontolgoo
+            Axios.post('https://api-rest-fedent.herokuapp.com/tons',{
                 nombre: usuario.nombre,
                 rut: usuario.rut,
                 telefono: usuario.telefono,
                 correo: usuario.correo
             }).then((response) => {
-                console.log(response)
-            }).catch(err => {
-                console.log(err)
-            })
+                if(response.status === 200){
+                    Axios.post('https://api-rest-fedent.herokuapp.com/usuarios',{
+                        username: usuario.username,
+                        password: usuario.password,
+                        nombre: usuario.nombre,
+                        rut: usuario.rut,
+                        telefono: usuario.telefono,
+                        correo: usuario.correo,
+                        rol: usuario.rol
+                    }).then((response) => {
+                        if(response.status === 200){
+                            Swal.fire(
+                                'Usuario Registrado Correctamente!',
+                                'Se registro el odontologo: '+usuario.username,
+                                'success'
+                              )
+                            history.push('/')
+                        }
+                    }).catch(err =>{
+                        console.log(err)
+                    })
 
-            //REGISTRAR USUARIO
-            Axios.post('https://api-rest-fedent.herokuapp.com/register',{
-                username: usuario.username,
-                password: usuario.password,
-                nombre: usuario.nombre,
-                rut: usuario.rut,
-                correo: usuario.correo,
-                telefono: usuario.telefono,
-                rol: usuario.rol
-            }).then((response) => {
-                console.log(response)
+                }
             }).catch(err => {
                 console.log(err)
-            })
-            
-            Swal.fire(
-                'Usuario Registrado Correctamente!',
-                'Se registro el tons: '+usuario.username,
-                'success'
-              )
-            history.push('/')
+            })     
         }
-        else if (usuario.rol === "administrador"){
-
-            
-            //REGISTRAR USUARIO
-            Axios.post('https://api-rest-fedent.herokuapp.com/register',{
-                username: usuario.username,
-                password: usuario.password,
-                nombre: usuario.nombre,
-                rut: usuario.rut,
-                correo: usuario.correo,
-                telefono: usuario.telefono,
-                rol: usuario.rol
-            }).then((response) => {
-                console.log(response)
-            }).catch(err => {
-                console.log(err)
-            })
-            
-            Swal.fire(
-                'Usuario Registrado Correctamente!',
-                'Se registro el odontologo: '+usuario.username,
-                'success'
-              )
-            history.push('/')
-        }
-
         
-
-   
     }
 
     return (

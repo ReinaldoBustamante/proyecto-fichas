@@ -27,7 +27,7 @@ export const DatosPersonales = (props) => {
                             <span className="h4">ID: <span className="h5">{paciente.rut}</span></span>
                         </div>
                         <div className="col">
-                            <span className="h4">Edad: <span className="h5">{paciente.edad}</span></span>
+                            <span className="h4">Nacimiento: <span className="h5">{paciente.fecha_nacimiento}</span></span>
                         </div>
                         <div className="col">
                             <span className="h4">Sexo: <span className="h5">{paciente.sexo}</span></span>

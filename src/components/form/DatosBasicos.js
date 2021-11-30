@@ -36,10 +36,22 @@ export const DatosBasicos = (props) => {
                 rut:e.target.value
             })
         }
-        if(e.target.name === 'edad'){
+        if(e.target.name === 'dia'){
             setDatosBasicos({
                 ...datosBasicos,
-                edad:e.target.value
+                dia:e.target.value
+            })
+        }
+        if(e.target.name === 'mes'){
+            setDatosBasicos({
+                ...datosBasicos,
+                mes:e.target.value
+            })
+        }
+        if(e.target.name === 'año'){
+            setDatosBasicos({
+                ...datosBasicos,
+                año:e.target.value
             })
         }
         if(e.target.name === 'telefono'){
@@ -107,7 +119,6 @@ export const DatosBasicos = (props) => {
                             <input type='text' name='rut' id='rut' className='form-control' placeholder='Ingrese su rut ' value={datosBasicos.rut} onChange={handleOnChange} required/>
                             <label htmlFor ='rut'>Rut</label>
                         </div>
-                
                 </div>
                
             </div>
@@ -115,10 +126,22 @@ export const DatosBasicos = (props) => {
             {/* Edad Telefono y celular */}
 
             <div className='row'>
-                <div className='col-12 mb-3'>
+                <div className='col-4 mb-3'>
                     <div className='form-floating '>
-                        <input type='text' name='edad' id='edad' className='form-control' placeholder='Indique su edad ' value={datosBasicos.edad} onChange={handleOnChange} required/>
-                        <label htmlFor ='edad'>Edad</label>
+                        <input type='text' name='dia' id='dia' className='form-control' placeholder='dia ' value={datosBasicos.dia} onChange={handleOnChange} required/>
+                        <label htmlFor ='dia'>Dia</label>
+                    </div>
+                </div>
+                <div className='col-4 mb-3'>
+                    <div className='form-floating '>
+                        <input type='text' name='mes' id='mes' className='form-control' placeholder='mes' value={datosBasicos.mes} onChange={handleOnChange} required/>
+                        <label htmlFor ='mes'>Mes</label>
+                    </div>
+                </div>
+                <div className='col-4 mb-3'>
+                    <div className='form-floating '>
+                        <input type='text' name='año' id='año' className='form-control' placeholder='año' value={datosBasicos.año} onChange={handleOnChange} required/>
+                        <label htmlFor ='año'>Año</label>
                     </div>
                 </div>
                 <div className='col-12 mb-3'>
