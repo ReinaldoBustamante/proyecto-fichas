@@ -4,7 +4,6 @@ import Swal from 'sweetalert2'
 import { useHistory } from "react-router-dom";
 
 export const BuscarPaciente = (props) => {
-    const {setpaciente} = props
     const [rut, setrut] = useState('')
    
     let history = useHistory()
@@ -27,9 +26,8 @@ export const BuscarPaciente = (props) => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault()
-        Axios.get(`https://api-rest-fedent.herokuapp.com/pacientes/${rut}`).then( (response) => {
+        Axios.get(`https://api-rest-cfedent.herokuapp.com/pacientes/${rut}`).then( (response) => {
             if (response.data.length !== 0){
-                setpaciente(response.data[0])
                 Swal.fire(
                     'Usuario Encontrado',
                     'Se encontro el usuario: '+response.data[0].nombre,
@@ -57,7 +55,7 @@ export const BuscarPaciente = (props) => {
 
             <div className='row'>
                 <div className='col'>
-                <div className="card shadow">
+                <div className="card shadow bg-light">
                         <div className="card-header">Buscar Paciente</div>
                         <div className="card-body d-grid">
                         <form action='' onSubmit={handleOnSubmit}>

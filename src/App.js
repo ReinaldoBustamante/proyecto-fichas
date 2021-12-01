@@ -31,7 +31,7 @@ export const App = () => {
     username: ''
   })
 
-  const [paciente, setpaciente] = useState('')
+
   return (
     <div className='container-flush'>
       <Router>
@@ -40,8 +40,6 @@ export const App = () => {
         :
         ""
         }
-        
-
         <Switch>
           {/* RUTA LOGIN*/}
           <Route path='/login'>
@@ -62,7 +60,7 @@ export const App = () => {
 
           <RutaPrivada path='/paciente/:rut' loginStatus={loginStatus}>
 
-            <Paciente paciente = { paciente }/>
+            <Paciente/>
     
           </RutaPrivada>
 
@@ -80,9 +78,10 @@ export const App = () => {
 
           <RutaPrivada path='/' loginStatus={loginStatus} >
 
-            <Inicio usuario = {usuario} setpaciente = {setpaciente}/>
+            <Inicio usuario = {usuario}  />
     
           </RutaPrivada>
+          
           {/*
           <Route path='/registrar-paciente'>
             <RegistraPaciente />
@@ -95,7 +94,7 @@ export const App = () => {
 
 
         </Switch>
-          
+        
       </Router>
       
       

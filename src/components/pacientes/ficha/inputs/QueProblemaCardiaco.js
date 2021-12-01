@@ -12,7 +12,7 @@ export const QueProblemaCardiaco = (props) => {
         <div class="form-floating">
             <input type = "text" onChange={handleOnChange} value={fichaPaciente.que_problema_cardiaco} class="form-control" name = "que_problema_cardiaco" id="que_problema_cardiaco"/>
             <label htmlFor= "que_problema_cardiaco" >
-                A que droga / alimento
+                Cual problema cardiaco
             </label>
         </div>
     )

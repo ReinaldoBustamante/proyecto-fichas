@@ -1,5 +1,6 @@
-import React from 'react'
-import { useHistory } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+import Axios from "axios"
+
 import { DatosPersonales } from '../components/pacientes/DatosPersonales';
 import { useParams } from 'react-router-dom';
 import { Ficha } from '../components/pacientes/Ficha';
@@ -7,11 +8,18 @@ import { Historial } from '../components/pacientes/Historial';
 import { Odontograma } from '../components/pacientes/Odontograma';
 
 export const Paciente = (props) => {
-    let history = useHistory()
+    
     const { rut } = useParams()
-    const {paciente} = props
-
-
+    const [paciente, setpaciente] = useState("")
+    useEffect(() => {
+        Axios.get(`https://api-rest-cfedent.herokuapp.com/pacientes/${rut}`).then( (response) =>{
+            if(response.status === 200){
+                setpaciente(response.data[0])
+            }   
+        })
+    }, [])
+    
+    
     return (
         <div className='container-flush' >
             <div className = "row">
@@ -34,7 +42,7 @@ export const Paciente = (props) => {
                 
             </div>
             <div className="tab-content" id="pills-tabContent">
-                <div className="tab-pane fade show active" id="pills-ficha" role="tabpanel" aria-labelledby="pills-ficha-tab"><Ficha rut={rut} /></div>
+                <div className="tab-pane fade show active" id="pills-ficha" role="tabpanel" aria-labelledby="pills-ficha-tab"><Ficha rut={rut} paciente={paciente} /></div>
                 <div className="tab-pane fade" id="pills-historial" role="tabpanel" aria-labelledby="pills-historial-tab"><Historial rut ={rut}/></div>
                 <div className="tab-pane fade" id="pills-odontograma" role="tabpanel" aria-labelledby="pills-odontograma-tab"><Odontograma rut={rut} /></div>
             </div>

@@ -74,7 +74,6 @@ export const Formulario = (props) => {
 
     const registrar = (e) =>{
         e.preventDefault()
-
         if (usuario.rol === '' || usuario.username === ''|| usuario.password=== '' || usuario.nombre === ''|| usuario.rut=== '' || usuario.correo=== '' || usuario.telefono === '' ){
             Toast.fire({
                 icon: 'error',
@@ -85,14 +84,15 @@ export const Formulario = (props) => {
         else if (usuario.rol === "odontologo"){
 
             //Registrar odontolgoo
-            Axios.post('https://api-rest-fedent.herokuapp.com/odontologos',{
+
+            Axios.post('https://api-rest-cfedent.herokuapp.com/odontologos',{
                 nombre: usuario.nombre,
                 rut: usuario.rut,
                 telefono: usuario.telefono,
                 correo: usuario.correo
-            }).then((response) => {
-                if(response.status === 200){
-                    Axios.post('https://api-rest-fedent.herokuapp.com/usuarios',{
+            }).then((res) => {
+                if(res.status === 200){
+                    Axios.post('https://api-rest-cfedent.herokuapp.com/usuarios',{
                         username: usuario.username,
                         password: usuario.password,
                         nombre: usuario.nombre,
@@ -107,7 +107,7 @@ export const Formulario = (props) => {
                                 'Se registro el odontologo: '+usuario.username,
                                 'success'
                               )
-                            history.push('/')
+                            history.push('/registros-usuarios')
                         }
                     }).catch(err =>{
                         console.log(err)
@@ -119,7 +119,7 @@ export const Formulario = (props) => {
             }) 
         }
         else if(usuario.rol === "administrador"){
-            Axios.post('https://api-rest-fedent.herokuapp.com/usuarios',{
+            Axios.post('https://api-rest-cfedent.herokuapp.com/usuarios',{
                 username: usuario.username,
                 password: usuario.password,
                 nombre: usuario.nombre,
@@ -134,7 +134,7 @@ export const Formulario = (props) => {
                         'Se registro el odontologo: '+usuario.username,
                         'success'
                       )
-                    history.push('/')
+                    history.push('/registros-usuarios')
                 }
             }).catch(err =>{
                 console.log(err)
@@ -142,14 +142,14 @@ export const Formulario = (props) => {
         }
         else if(usuario.rol === "tons"){
             //Registrar odontolgoo
-            Axios.post('https://api-rest-fedent.herokuapp.com/tons',{
+            Axios.post('https://api-rest-cfedent.herokuapp.com/tons',{
                 nombre: usuario.nombre,
                 rut: usuario.rut,
                 telefono: usuario.telefono,
                 correo: usuario.correo
             }).then((response) => {
                 if(response.status === 200){
-                    Axios.post('https://api-rest-fedent.herokuapp.com/usuarios',{
+                    Axios.post('https://api-rest-cfedent.herokuapp.com/usuarios',{
                         username: usuario.username,
                         password: usuario.password,
                         nombre: usuario.nombre,
@@ -164,7 +164,7 @@ export const Formulario = (props) => {
                                 'Se registro el odontologo: '+usuario.username,
                                 'success'
                               )
-                            history.push('/')
+                            history.push('/registros-usuarios')
                         }
                     }).catch(err =>{
                         console.log(err)

@@ -7,21 +7,25 @@ export const Tabla = () => {
     const [pacientes, setPacientes] = useState([])
     const [carga, setcarga] = useState(0)
     useEffect(() => {
-        Axios.get('https://api-rest-fedent.herokuapp.com/pacientes').then( (response) =>{
+        Axios.get('https://api-rest-cfedent.herokuapp.com/pacientes').then( (response) =>{
         setPacientes(response.data)
         })
-        console.log("montado")
     }, [carga])
     
     const handleOnClick = (e) => {
-        console.log(e.target.id)
-        Axios.delete(`https://api-rest-fedent.herokuapp.com/pacientes/${e.target.id}`)
+        Axios.delete(`https://api-rest-cfedent.herokuapp.com/fichas/${e.target.value}`)
         .then(res => {
             if(res.status === 200){
-                console.log(res)
-                setcarga(carga+1)
+                Axios.delete(`https://api-rest-cfedent.herokuapp.com/pacientes/${e.target.value}`)
+                .then(res => {
+                    if(res.status === 200){
+                        console.log("se elimino correctamente")
+                        setcarga(carga+1)
+                    }
+                })
             }
         })
+        
         
     }
 
@@ -41,16 +45,15 @@ export const Tabla = () => {
                 <tbody>
                     {pacientes.map( (paciente, i) => {
                         return (
-                        <>
-                            <tr key = {i}>
+                        
+                            <tr key={i}>
                                 <td >{paciente.rut}</td>
                                 <td >{paciente.nombre}</td>
                                 <td >{paciente.domicilio}</td>
                                 <td>{paciente.telefono}</td>
-                                <td><button type="button" className="btn btn-danger" id={paciente.id_paciente} onClick ={handleOnClick} >Eliminar</button></td>
+                                <td><button type="button" className="btn btn-danger" value={paciente.rut} onClick ={handleOnClick} >Eliminar</button></td>
                             </tr>
                             
-                        </>
                         )
                         
                     })}

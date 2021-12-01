@@ -9,7 +9,7 @@ import { QueConstancia } from '../inputs/QueConstancia'
 import { UlceraGastrica } from '../inputs/UlceraGastrica'
 
 export const SeccionTres = (props) => {
-    const {setseccion, seccion, fichaPaciente, setfichaPaciente} = props
+    const {fichaPaciente, setfichaPaciente} = props
 
 
     return (

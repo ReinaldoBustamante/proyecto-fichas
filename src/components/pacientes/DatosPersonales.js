@@ -1,18 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import Axios from 'axios'
+import React from 'react'
+
 export const DatosPersonales = (props) => {
-    const {params} = props
-    const [paciente, setDatosPaciente] = useState("")
-    useEffect(() => {
-        Axios.get(`https://api-rest-fedent.herokuapp.com/pacientes/${params}`).then( (response) =>{
-            if (response.data.length !== 0){
-                setDatosPaciente(response.data[0])
-            }
-        })
-    }, [])
-        
-    
-    
+    const {paciente} = props
     
     return (
         <div>
@@ -20,39 +9,39 @@ export const DatosPersonales = (props) => {
             ""
             :
             <div className="text-white color-1 mb-3">
-            <div className="card-header text-center"><span className="h4">{paciente.nombre}</span></div>
+            <div className="card-header text-center"><span className="h5">{paciente.nombre}</span></div>
                 <div className="card-body card-text">
                     <div className= "row mt-1">
                         <div className="col">
-                            <span className="h4">ID: <span className="h5">{paciente.rut}</span></span>
+                            <span className="h5">ID: <span className="h6">{paciente.rut}</span></span>
                         </div>
                         <div className="col">
-                            <span className="h4">Nacimiento: <span className="h5">{paciente.fecha_nacimiento}</span></span>
+                            <span className="h5">Nacimiento: <span className="h6">{paciente.fecha_nacimiento}</span></span>
                         </div>
                         <div className="col">
-                            <span className="h4">Sexo: <span className="h5">{paciente.sexo}</span></span>
-                        </div>
-                    </div>
-                    <div className= "row mt-1">
-                        <div className="col">
-                            <span className="h4">Telefono: <span className="h5">{paciente.telefono}</span></span>
-                        </div>
-                        <div className="col">
-                            <span className="h4">Celular: <span className="h5">{paciente.celular}</span></span>
-                        </div>
-                        <div className="col">
-                            <span className="h4">Estado Civil: <span className="h5">{paciente.estado_civil}</span></span>
+                            <span className="h5">Sexo: <span className="h6">{paciente.sexo}</span></span>
                         </div>
                     </div>
                     <div className= "row mt-1">
                         <div className="col">
-                            <span className="h4">Domicilio: <span className="h5">{paciente.domicilio}</span></span>
+                            <span className="h5">Telefono: <span className="h6">{paciente.telefono}</span></span>
                         </div>
                         <div className="col">
-                            <span className="h4">Profesion: <span className="h5">{paciente.profesion}</span></span>
+                            <span className="h5">Celular: <span className="h6">{paciente.celular}</span></span>
                         </div>
                         <div className="col">
-                            <span className="h4">Trabaja en: <span className="h5">{paciente.lugar_trabajo}</span></span>
+                            <span className="h5">Estado Civil: <span className="h6">{paciente.estado_civil}</span></span>
+                        </div>
+                    </div>
+                    <div className= "row mt-1">
+                        <div className="col">
+                            <span className="h5">Domicilio: <span className="h6">{paciente.domicilio}</span></span>
+                        </div>
+                        <div className="col">
+                            <span className="h5">Profesion: <span className="h6">{paciente.profesion}</span></span>
+                        </div>
+                        <div className="col">
+                            <span className="h5">Trabaja en: <span className="h6">{paciente.lugar_trabajo}</span></span>
                         </div>
                     </div>
                         

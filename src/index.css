@@ -7,7 +7,7 @@
 .fondo{
     background: url(https://dentistacamas.com/wp-content/uploads/2018/06/fondo-dentista.jpg) no-repeat center center fixed;
     background-size: cover;
-    height: 1291px;
+    height: 1294px;
     
 }
 
@@ -21,7 +21,7 @@
 
 
 .color-1{
-    background-color: rgb(3, 151, 250);
+    background-color: rgb(50, 165, 241);
 }
 
 .pad-r{
@@ -64,4 +64,50 @@
 .p-p{
     margin-left:1%;
     padding-left: 1%;
+}
+
+.bg-ficha{
+    background-color: rgba(8, 170, 245, 0.603);
+    color: white;
+    border-radius: 1rem;
+    
+}
+.bg-color{
+    background-color: #38CAFD;
+    height: 1294px;
+}
+
+.bg-card{
+    max-width: 18rem;
+    max-height: 6rem;
+    border-radius: 1rem;
+}
+
+
+.c-body{
+    display:flex;
+    justify-content: center;
+}
+.c-header{
+    display:flex;
+    justify-content: center;
+}
+
+.bg-si{
+    background-color: rgb(45, 214, 3);
+    max-width: 18rem;
+    max-height: 6rem;
+    border-radius: 1rem;
+}
+.bg-no{
+    background-color: red;
+    max-width: 18rem;
+    max-height: 6rem;
+    border-radius: 1rem;
+}
+.bg-vacio{
+    background-color: rgba(243, 132, 132, 0.89);
+    max-width: 18rem;
+    max-height: 6rem;
+    border-radius: 1rem;
 }

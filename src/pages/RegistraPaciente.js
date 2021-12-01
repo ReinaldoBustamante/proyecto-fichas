@@ -68,7 +68,7 @@ export const RegistraPaciente= () => {
             })
         }
         else{
-            Axios.post('https://api-rest-fedent.herokuapp.com/pacientes',{
+            Axios.post('https://api-rest-cfedent.herokuapp.com/pacientes',{
                 id_odontologo: datosBasicos.id_odontologo,
                 nombre: datosBasicos.nombre,
                 sexo: datosBasicos.sexo,

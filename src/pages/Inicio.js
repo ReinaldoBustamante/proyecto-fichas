@@ -3,7 +3,7 @@ import { BuscarPaciente } from '../components/inicio/BuscarPaciente'
 import { DatosPersonales } from '../components/inicio/DatosPersonales'
 
 export const Inicio = (props) => {
-    const {usuario, setpaciente} = props
+    const {usuario} = props
     const {nombre, rut, correo, telefono, rol} = usuario
     return (
         <div className='container-flush'>
@@ -14,7 +14,7 @@ export const Inicio = (props) => {
                
                 </div>
                 <div className="col-6 ">
-                    < BuscarPaciente  setpaciente = {setpaciente}/>
+                    < BuscarPaciente />
                 </div>
             </div>
             
