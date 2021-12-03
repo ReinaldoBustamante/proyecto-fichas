@@ -27,17 +27,19 @@ export const Paciente = (props) => {
                     <DatosPersonales paciente = {paciente} params = {rut}/>
                 </div>
             </div>
-            <div className="row d-flex ">
+            <div className="row d-flex mt-2 ">
                 <ul className="nav nav-pills mt-2 mb-2 justify-content-center" id="pills-tab" role="tablist">
-                    <li className="nav-item" role="presentation">
-                        <button className="nav-link active" id="pills-ficha-tab" data-bs-toggle="pill" data-bs-target="#pills-ficha" type="button" role="tab" aria-controls="pills-ficha" aria-selected="false">Ficha Clinica</button>
-                    </li>
-                    <li className="nav-item" role="presentation">
-                        <button className="nav-link" id="pills-historial-tab" data-bs-toggle="pill" data-bs-target="#pills-historial" type="button" role="tab" aria-controls="pills-historial" aria-selected="false">Historial Clinico</button>
-                    </li>
-                    <li className="nav-item" role="presentation">
-                        <button className="nav-link" id="pills-odontograma-tab" data-bs-toggle="pill" data-bs-target="#pills-odontograma" type="button" role="tab" aria-controls="pills-odontograma" aria-selected="false">Odontograma</button>
-                    </li>
+                        <li className="nav-item " role="presentation">
+                            <button className="btn b-ficha bg-menu  text-white active" id="pills-ficha-tab" data-bs-toggle="pill" data-bs-target="#pills-ficha" type="button" role="tab" aria-controls="pills-ficha" aria-selected="false">Ficha Clinica</button>
+                        </li>
+                        <li className="nav-item" role="presentation">
+                            <button className="btn b-historial bg-menu text-white" id="pills-historial-tab" data-bs-toggle="pill" data-bs-target="#pills-historial" type="button" role="tab" aria-controls="pills-historial" aria-selected="false">Historial Clinico</button>
+                        </li>
+                        <li className="nav-item" role="presentation">
+                            <button className="btn b-odontograma bg-menu text-white" id="pills-odontograma-tab" data-bs-toggle="pill" data-bs-target="#pills-odontograma" type="button" role="tab" aria-controls="pills-odontograma" aria-selected="false">Odontograma</button>
+                        </li>
+                    
+                    
                 </ul>
                 
             </div>

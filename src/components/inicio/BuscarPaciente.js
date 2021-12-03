@@ -51,33 +51,38 @@ export const BuscarPaciente = (props) => {
 
     
     return (
-        <div className='container-fluid'>
+            <div className="">
+                
+                <form action='' onSubmit={handleOnSubmit}> 
 
-            <div className='row'>
-                <div className='col'>
-                <div className="card shadow bg-light">
-                        <div className="card-header">Buscar Paciente</div>
-                        <div className="card-body d-grid">
-                        <form action='' onSubmit={handleOnSubmit}>
-                            <div className="form-group row">
-                                <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Rut Paciente:</label>
-                                <div className="col">
-                                    <input type="text" className="form-control" id="rut" name='rut' placeholder="Ingrese su rut" onChange={handleOnChange} value={rut} required />
-                         
-                                </div>
-                                <div className="col">
-                                <button type='submit' className='btn btn-primary'>Buscar</button>
-                                </div>
+                    <div className='row mt-3'> 
+                        <div className="d-flex justify-content-center">
+                            <div className="col-12 form-floating tamaño">
+                                <div className="titulos">Buscador Paciente</div>
                             </div>
-                         
-                        </form>
-                        
-                            
-                        </div>
-                    </div>
-                </div>
+                        </div>  
+                    </div> 
+
+                    <div className='row mt-3'> 
+                        <div className="d-flex justify-content-center">
+                            <div className="col-12 form-floating tamaño">
+                                <input type="text " className="form-control " id="rut" name='rut' placeholder="Rut paciente" onChange={handleOnChange} value={rut} required />
+                                <label className="label-edit">Rut paciente</label>
+                            </div>
+                        </div>  
+                    </div> 
+
+                    <div className='row mt-1'> 
+                        <div className="d-flex justify-content-center form-group">
+                            <div className="col-12 form-floating tamaño d-grid">
+                                <button className="btn boton ">Buscar</button>
+                            </div>
+                        </div>  
+                    </div>    
+                </form>
             </div>
             
-        </div>
+            
+     
     )
 }

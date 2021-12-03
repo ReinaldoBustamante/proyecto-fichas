@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { PadreConVida } from '../PadreConVida'
 import { FechaFicha } from '../FechaFicha'
 import { FechaNacimiento } from '../FechaNacimiento'
-import { Rut } from '../Rut'
 import { EnfermedadPadre } from '../EnfermedadPadre'
 import { MadreConVida } from '../MadreConVida'
 import { EnfermedadMadre } from '../EnfermedadMadre'
@@ -24,8 +23,8 @@ export const SeccionUno = (props) => {
     //filtrar campos verdaderos
    
     return (
-        <div class="card bg-ficha mb-3 ">
-            <div class="card-header text-center"><span>N°</span>{datosFicha.folio}</div>
+        <div class="border-c card">
+            <div class="card-header  text-center"><span>ID: </span>{datosFicha.rut}</div>
             <div class="card-body">
 
                 <div className="row d-flex">
@@ -35,9 +34,6 @@ export const SeccionUno = (props) => {
                 </div>
 
                 <div className="row d-flex">
-                    <div className="col-3">
-                        <Rut datosFicha= {datosFicha} />
-                    </div>
                     <div className="col-3">
                         <FechaNacimiento datosFicha= {datosFicha} />
                     </div>

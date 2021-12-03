@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { SeccionDos } from './visualizacion/seccion/SeccionDos'
+import { SeccionTres } from './visualizacion/seccion/SeccionTres'
 import { SeccionUno } from './visualizacion/seccion/SeccionUno'
 
 
@@ -19,7 +20,6 @@ export const VisualizarFicha = (props) => {
             setseccion(3)
         }
     }
-    console.log(seccion)
     return (
         <div>
             <div className="row">
@@ -30,17 +30,16 @@ export const VisualizarFicha = (props) => {
                     seccion === 2 ?
                         <SeccionDos datosFicha = {datosFicha} />
                     :
-                    <div>seccion3</div>
-                    //<SeccionTres datosFicha = {datosFicha} />
+                    <SeccionTres datosFicha = {datosFicha} />
                     }
                 </div>
             </div>
             
-            <div className="row d-flex justify-content-end">
-                <div className="col-2 btn-group t">
-                    <button className="btn btn-primary" onClick={handleOnClick} name="1">1</button>
-                    <button className="btn btn-primary" onClick={handleOnClick} name="2">2</button>
-                    <button className="btn btn-primary" onClick={handleOnClick} name="3">3</button>
+            <div className="row d-flex justify-content-end p-ss mt-2">
+                <div className="col-2 btn-group ">
+                    <button className="btn bg-menu text-white" onClick={handleOnClick} name="1">1</button>
+                    <button className="btn bg-menu text-white" onClick={handleOnClick} name="2">2</button>
+                    <button className="btn bg-menu text-white" onClick={handleOnClick} name="3">3</button>
     
                 </div>
                 

@@ -97,10 +97,10 @@ export const Tabla = () => {
 
     return (
         <div className= "mt-5">
-            <table className="table">
+            <table className="cinereousTable ">
                 <thead>
                     <tr>
-                    <th scope="col">Usuario</th>
+                    <th scope="col" >Usuario</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Rut</th>
                     <th scope="col">Correo</th>
@@ -113,12 +113,12 @@ export const Tabla = () => {
                         return (
                         <>
                             <tr key = {i}>
-                                <td >{usuario.username}</td>
-                                <td >{usuario.nombre}</td>
-                                <td >{usuario.rut}</td>
-                                <td >{usuario.correo}</td>
-                                <td >{usuario.rol}</td>
-                                <td><button type="button" className="btn btn-danger" name ={usuario.rol} value={usuario.rut} onClick={handleOnClick} >Eliminar</button></td>
+                                <td className="fuente-2">{usuario.username}</td>
+                                <td className="fuente-2">{usuario.nombre}</td>
+                                <td className="fuente-2">{usuario.rut}</td>
+                                <td className="fuente-2">{usuario.correo}</td>
+                                <td className="fuente-2">{usuario.rol}</td>
+                                <td ><button type="button" className="btn btn-danger" name ={usuario.rol} value={usuario.rut} onClick={handleOnClick} >Eliminar</button></td>
                             </tr>
                             
                         </>

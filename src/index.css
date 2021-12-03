@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat+Alternates);
 .body{
     padding: 13%;
     
@@ -74,7 +75,7 @@
 }
 .bg-color{
     background-color: #38CAFD;
-    height: 1294px;
+    height: 1276px;
 }
 
 .bg-card{
@@ -100,7 +101,7 @@
     border-radius: 1rem;
 }
 .bg-no{
-    background-color: red;
+    background-color: #ff4444;
     max-width: 18rem;
     max-height: 6rem;
     border-radius: 1rem;
@@ -110,4 +111,157 @@
     max-width: 18rem;
     max-height: 6rem;
     border-radius: 1rem;
+}
+.b-ficha{
+    margin-right:20px ;
+}
+.b-odontograma{
+    margin-left: 20px;
+}
+
+.border-c{
+    border-radius: 1rem;
+}
+
+.bg-all{
+    background-color: white;
+    height: 1276px;
+}
+.bg-menu{
+    background-color: skyblue;
+    border-radius: 1rem;
+}
+
+.p-s{
+    padding-right: 10px;
+}
+.p-ss{
+    padding-right: 25px;
+}
+
+.w-foot{
+    height: 50px;
+}
+
+.linea{
+    border-top: steelblue;
+    border-bottom: steelblue;
+    background-color: rgb(35, 156, 238);
+}
+
+
+
+* {
+    margin:0;
+    padding:0;
+    font:12pt Arial;
+}
+
+body {
+  background-color:#34495e;
+}
+
+
+
+.border-select{
+    border-color:rgb(35, 156, 238);
+    display:flex;
+    position:realtive;
+    width:100%;
+    flex-direction:row;
+    box-shadow:
+     1px 1px 0 rgb(35, 156, 238),
+     2px 2px 0 rgb(35, 156, 238),
+     3px 3px 0 rgb(35, 156, 238),
+     4px 4px 0 rgb(35, 156, 238),
+     5px 5px 0 rgb(35, 156, 238),
+     6px 6px 0 rgb(35, 156, 238),
+     7px 7px 0 rgb(35, 156, 238);
+    ;
+    padding:0.8em 1em;
+    
+    
+}
+
+.titulos{
+    font:1.2em 'Montserrat Alternates';
+}
+.bg-boton{
+    background-color: rgb(35, 136, 238);
+    color: white;
+}
+.bg-boton:hover{
+    background-color: rgb(35, 106, 238);
+    color: white;
+}
+
+.label-edit{
+    font:1.2em 'Montserrat Alternates';
+    margin-left:0.5%;
+}
+
+.titulo{
+    font:1.5em 'Montserrat Alternates';
+    
+}
+
+.center{
+    display: flex;
+    align-items: center;
+}
+
+table.cinereousTable {
+    background-color: rgb(50, 165, 241);
+    width: 100%;
+    text-align: center;
+    box-shadow: 20px 11px 9px 5px rgba(0,0,0,0.2);
+    
+  }
+  table.cinereousTable td, table.cinereousTable th {
+    border: 0px solid #948473;
+    padding: 4px 4px;
+
+  }
+  table.cinereousTable tbody td {
+    font-size: 13px;
+    color: #FFFAFB;
+  }
+  table.cinereousTable tr:nth-child(even) {
+    background: rgb(50, 170, 241);
+  }
+  table.cinereousTable thead {
+    background: #156E94;
+    background: -moz-linear-gradient(top, #4f92af 0%, #2c7c9e 66%, #156E94 100%);
+    background: -webkit-linear-gradient(top, #4f92af 0%, #2c7c9e 66%, #156E94 100%);
+    background: linear-gradient(to bottom, #4f92af 0%, #2c7c9e 66%, #156E94 100%);
+    border-bottom: 3px solid #444444;
+  }
+  table.cinereousTable thead th {
+    font-size: 16px;
+    font-weight: bold;
+    color: #F0F0F0;
+    text-align: center;
+    border-left: 0px solid #948473;
+  }
+  table.cinereousTable thead th:first-child {
+    border-left: none;
+  }
+
+.fuente-2{
+    font:1em 'Montserrat Alternates';
+}
+
+.tamaño{
+    width: 30%
+}
+
+.boton{
+    background-color: #12b0e3;
+    color: white;
+    border-radius: 1em;
+}
+.boton:hover{
+    background-color: #089cce;
+    color: white;
+
 }

@@ -179,49 +179,54 @@ export const Formulario = (props) => {
     }
 
     return (
-        <div className='container'>
+        <div className='container '>
             <form action='' onSubmit={ registrar } className='validated' >
-                <div className='row mt-3'>
-                    <div className='col-12'>
-                        <label htmlFor=''>Nombre de usuario: </label>
-                        <input type='text' className='form-control' name='username' value={usuario.username} onChange={handleOnChange}/>
+                <div className='row mt-3 '>
+                    <div className='col-12 form-floating'>
+                        <input type='text' placeholder="Ingrese usuario" className='form-control' name='username' value={usuario.username} onChange={handleOnChange}/>
+                        <label className="label-edit " for ="1"> Ingrese usuario</label>
                     </div>
-                    <div className='col-12 mt-3'>
-                        <label htmlFor=''>Ingrese contraseña: </label>
-                        <input type='text' className='form-control' name='password' value={usuario.password} onChange={handleOnChange}/>
+                    <div className='col-12 mt-3 form-floating'>
+                        <input type='text' placeholder="Ingrese contraseña" className='form-control' name='password' value={usuario.password} onChange={handleOnChange}/>
+                        <label className="label-edit " for ="1"> Ingrese contraseña</label>
                     </div>
                     
-                    <div className='col-12 mt-3'>
-                        <label htmlFor=''>Nombre: </label>
-                        <input type='text' className='form-control' name='nombre' value={usuario.nombre} onChange={handleOnChange}/>
+                    <div className='col-12 mt-3 form-floating'>
+            
+                        <input type='text' placeholder="Ingrese nombre" className='form-control' name='nombre' value={usuario.nombre} onChange={handleOnChange}/>
+                        <label className="label-edit " for ="1"> Ingrese nombre</label>
                     </div>
-                    <div className='col-12 mt-3'>
-                        <label htmlFor=''>Rut: </label>
-                        <input type='text' className='form-control' name='rut' value={usuario.rut} onChange={handleOnChange}/>
+                    <div className='col-12 mt-3 form-floating'>
+
+                        <input type='text' className='form-control' placeholder="Ingrese rut" name='rut' value={usuario.rut} onChange={handleOnChange}/>
+                        <label className="label-edit " for ="1"> Ingrese rut</label>
                     </div>
-                    <div className='col-12 mt-3'>
-                        <label htmlFor=''>Correo: </label>
-                        <input type='text' className='form-control' name='correo' value={usuario.correo} onChange={handleOnChange}/>
-                    </div>
-                    <div className='col-12 mt-3'>
-                        <label htmlFor=''>Telefono: </label>
-                        <input type='text' className='form-control' name='telefono' value={usuario.telefono} onChange={handleOnChange}/>
+                    <div className='col-12 mt-3  form-floating'>
+            
+                        <input type='text' className='form-control' name='correo' placeholder="Ingrese correo" value={usuario.correo} onChange={handleOnChange}/>
+                        <label className="label-edit " for ="1"> Ingrese correo</label>
                     </div>
 
-                    <div className='col-12 mt-3'>
-                    <label>Rol</label>
-                    <select className="form-select" name='rol' onChange={ handleOnChange }>
-                        <option value=''>Seleccione el rol del usuario</option>
-                        <option value="administrador">Administrador</option>
-                        <option value="odontologo">Odontologo</option>
-                        <option value="tons">Tons</option>
+                    <div className='col-12 mt-3  form-floating'>
+                
+                        <input type='text' id="1" className='form-control fuente-2' name='telefono'placeholder="Ingrese telefono" value={usuario.telefono} onChange={handleOnChange}/>
+                        <label className="label-edit " for ="1"> Ingrese telefono</label>
+                    </div>
+
+                    <div className='col-12 mt-3  form-floating'>
+                    
+                    <select className="form-select titulos form-control" name='rol' onChange={ handleOnChange }>
+                        <option value="administrador" className="fuente-2">Administrador</option>
+                        <option value="odontologo" className="fuente-2">Odontologo</option>
+                        <option value="tons" className="fuente-2">Tons</option>
                     </select>
+                    <label value='' className="label-edit">Seleccione el rol del usuario</label>
                     </div> 
                     
                 </div>
                 <div className='row mt-3'>
                     <div className='col d-grid'>
-                        <button type='submit' className='btn btn-primary '>Registrar Usuario</button>
+                        <button type='submit' className='btn boton '>Registrar Usuario</button>
                     </div>
                 </div>
             </form>

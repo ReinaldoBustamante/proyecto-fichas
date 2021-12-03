@@ -8,8 +8,8 @@ export const DatosPersonales = (props) => {
             {paciente === "" ?
             ""
             :
-            <div className="text-white color-1 mb-3">
-            <div className="card-header text-center"><span className="h5">{paciente.nombre}</span></div>
+            <div className="text-white color-1 <mb-3">
+            <div className="card-header text-center"><span className="h4">{paciente.nombre}</span></div>
                 <div className="card-body card-text">
                     <div className= "row mt-1">
                         <div className="col">
@@ -44,12 +44,11 @@ export const DatosPersonales = (props) => {
                             <span className="h5">Trabaja en: <span className="h6">{paciente.lugar_trabajo}</span></span>
                         </div>
                     </div>
-                        
-                        
-                        
-
+                    
+                </div>
+                
+               
             </div>
-        </div>
             }
         </div>
         

@@ -15,8 +15,11 @@ export const RegistrarUsuario = () => {
     return (
         <div className='container-fluid'>
             <div className='row '>
-                <div className='col'>
+                <div className='col-12'>
                     <Encabezado />
+                </div>
+
+                <div className='col-12 '>                 
                     <Formulario usuario = {usuario} setusuario={setusuario}/>
                 </div>
             </div>

@@ -33,7 +33,7 @@ export const App = () => {
 
 
   return (
-    <div className='container-flush'>
+    <div className='container-flush bg-all'>
       <Router>
         {loginStatus === true?
         <Navbar setloginStatus={setloginStatus} usuario = {usuario}/>
