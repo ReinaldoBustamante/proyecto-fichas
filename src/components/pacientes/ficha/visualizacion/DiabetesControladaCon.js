@@ -4,7 +4,7 @@ export const DiabetesControladaCon = (props) => {
     const {datosFicha} = props
     return (
         <div>
-            {datosFicha.diabetes === 1 ?
+            {datosFicha.diabetico === 1 ?
             <div className="card bg-card mb-3 text-dark" >
                 <div className="card-header c-header">Diabetes controlada con</div>
                 <div className="card-body c-body">

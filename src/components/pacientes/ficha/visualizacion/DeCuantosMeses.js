@@ -4,7 +4,7 @@ export const DeCuantosMeses = (props) => {
     const {datosFicha} = props
     return (
         <div>
-            {datosFicha.embarazada === 1 ?
+            {datosFicha.esta_embarazada === 1 ?
             <div className="card bg-card mb-3 text-dark" >
                 <div className="card-header c-header">Meses</div>
                 <div className="card-body c-body">

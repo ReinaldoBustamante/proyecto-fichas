@@ -4,7 +4,7 @@ export const EstaEmbarazada = (props) => {
     const {datosFicha} = props
     return (
         <div>
-            {datosFicha.embarazada === 1?
+            {datosFicha.esta_embarazada === 1?
                 <div className="card bg-si mb-3 text-white" >
                     <div className="card-header c-header">Embarazada</div>
                     <div className="card-body c-body">
