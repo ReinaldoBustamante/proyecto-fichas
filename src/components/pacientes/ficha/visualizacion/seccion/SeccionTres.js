@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Constancia } from '../Constancia'
 import { CuantosFuma } from '../CuantosFuma'
 import { DeCuantosMeses } from '../DeCuantosMeses'

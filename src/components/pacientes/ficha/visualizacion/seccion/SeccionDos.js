@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ProblemaCardiaco } from '../ProblemaCardiaco'
 import { DiabetesControladaCon } from '../DiabetesControladaCon'
 import { Diabetico } from '../Diabetico'

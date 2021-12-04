@@ -274,3 +274,8 @@ table.cinereousTable {
     max-height: 6rem;
     border-radius: 1rem;
 }
+
+.w-modal{
+    max-width: 800px;
+    
+}

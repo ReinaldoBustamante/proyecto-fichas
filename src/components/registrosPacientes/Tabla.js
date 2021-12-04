@@ -16,10 +16,16 @@ export const Tabla = () => {
         Axios.delete(`https://api-rest-cfedent.herokuapp.com/fichas/${e.target.value}`)
         .then(res => {
             if(res.status === 200){
-                Axios.delete(`https://api-rest-cfedent.herokuapp.com/pacientes/${e.target.value}`)
+                Axios.delete(`https://api-rest-cfedent.herokuapp.com/historiales-clinicos/${e.target.value}`)
                 .then(res => {
                     if(res.status === 200){
-                        console.log("se elimino correctamente")
+                        Axios.delete(`https://api-rest-cfedent.herokuapp.com/pacientes/${e.target.value}`)
+                        .then(res => {
+                            if(res.status === 200){
+                                console.log("se elimino correctamente")
+                                setcarga(carga+1)
+                            }
+                        })
                         setcarga(carga+1)
                     }
                 })
