@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Axios from "axios"
 import Swal from 'sweetalert2'
+import Moment from "moment"
 export const Formulario = (props) => {
     const {rut, setcargaHistorial, cargaHistorial} = props
     const [historial, sethistorial] = useState({
@@ -14,7 +15,17 @@ export const Formulario = (props) => {
     const añoActual = fecha.getFullYear();
     const hoy = fecha.getDate();
     const mesActual = fecha.getMonth() + 1; 
-    const creacion_historial = hoy+"/"+mesActual+"/"+añoActual
+    const creacion_historial = new Date(añoActual+"-"+mesActual+"-"+hoy)
+    const [historiales, sethistoriales] = useState("")
+
+    useEffect(() => {
+        Axios.get(`https://api-rest-cfedent.herokuapp.com/historiales-clinicos/${rut}/${añoActual+"-"+mesActual+"-"+hoy}/`).then( (response) =>{
+        sethistoriales(response.data)
+        })
+    
+    }, [])
+  
+    
 
 
 
@@ -47,32 +58,39 @@ export const Formulario = (props) => {
     
     const handleOnSubmit = (e) => {
         e.preventDefault()
-
-        Axios.post('https://api-rest-cfedent.herokuapp.com/historiales-clinicos',{
-            fecha: creacion_historial,
-            detalles: historial.detalles,
-            razon_ingreso: historial.razon_ingreso,
-            rut: rut
-            
-            
-            
-        }).then((response) => {
-            if(response.status === 200){
-                setcargaHistorial(cargaHistorial +1)
-                Toast.fire({
-                    icon: 'success',
-                    title: 'Signed in successfully'
-                })
-                sethistorial({
-                    ...historial,
-                    razon_ingreso: "",
-                    detalles: ""
-                })
-            }
-        }).catch(err =>{
-            console.log(err)
-        }) 
-
+        {historiales[0] === undefined ?
+            Axios.post('https://api-rest-cfedent.herokuapp.com/historiales-clinicos',{
+                fecha: creacion_historial,
+                detalles: historial.detalles,
+                razon_ingreso: historial.razon_ingreso,
+                rut: rut
+                
+                
+                
+            }).then((response) => {
+                if(response.status === 200){
+                    setcargaHistorial(cargaHistorial +1)
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Signed in successfully'
+                    })
+                    sethistorial({
+                        ...historial,
+                        razon_ingreso: "",
+                        detalles: ""
+                    })
+                }
+            }).catch(err =>{
+                console.log(err)
+            }) 
+    
+        :
+        Toast.fire({
+            icon: 'error',
+            title: 'Ya existe un historial creado en la fecha actual'
+        })
+        }
+       
     }
 
     return (

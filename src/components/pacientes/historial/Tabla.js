@@ -1,7 +1,9 @@
+import { Axios } from 'axios'
 import React from 'react'
-
+import { Odonto } from './Odonto'
+import Moment from "moment"
 export const Tabla = (props) => {
-    const {historial} = props
+    const {historial, rut} = props
     return (
         <div>
             <table className="cinereousTable mt-3">
@@ -10,6 +12,7 @@ export const Tabla = (props) => {
                         <th scope="col" >Fecha</th>
                         <th scope="col">Razon Ingreso</th>
                         <th scope="col">Detalles</th>
+                        <th scope="col">Odontograma</th> 
                     </tr>
                 </thead>
                 <tbody>
@@ -17,9 +20,12 @@ export const Tabla = (props) => {
                         return (
                             <>
                                 <tr key = {i}>
-                                    <td className="fuente-2">{hist.fecha}</td>
+                                    <td className="fuente-2">{Moment(hist.fecha).format("YYYY-MM-DD")}</td>
                                     <td className="fuente-2">{hist.razon_ingreso}</td>
-                                    <td className="fuente-2">{hist.detalles}</td>                        
+                                    <td className="fuente-2">{hist.detalles}</td>
+                                    <td className="fuente-2">{
+                                        <Odonto fecha={hist.fecha} rut={rut}/>
+                                    }</td>                          
                                 </tr>
                                     
                             </>

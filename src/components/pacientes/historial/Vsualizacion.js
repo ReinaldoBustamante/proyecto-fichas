@@ -6,7 +6,6 @@ import { Tabla } from './Tabla'
 
 export const Vsualizacion = (props) => {
     const {historial, rut, setcargaHistorial, cargaHistorial} = props
-    console.log(historial)
     return (
         <div>
             <div className="row d-grid justify-content-end">
@@ -23,7 +22,7 @@ export const Vsualizacion = (props) => {
 
             <div classNameName="row ">
                 <div className="col">
-                    <Tabla historial = {historial} />
+                    <Tabla historial = {historial} rut={rut}/>
                 </div>
             </div>
         </div>
