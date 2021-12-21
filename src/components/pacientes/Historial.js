@@ -5,11 +5,11 @@ import { Formulario } from './historial/Formulario'
 import { Vsualizacion } from './historial/Vsualizacion'
 
 export const Historial = (props) => {
-    const {rut, historial, sethistorial} = props
+    const {rut, historial, sethistorial, carga, setcarga} = props
     const [cargaHistorial, setcargaHistorial] = useState(0)
     const [fechas, setfechas] = useState([])
     useEffect(() => {
-        Axios.get(`https://api-rest-cfedent.herokuapp.com/historiales-clinicos/${rut}`).then( (response) =>{
+        Axios.get(`http://localhost:5000/historiales-clinicos/${rut}`).then( (response) =>{
             if(response.status === 200){
                 sethistorial(response.data)
                 
@@ -38,7 +38,7 @@ export const Historial = (props) => {
                     {
                      console.log(fechas)   
                     }
-                    <Vsualizacion historial = {historial} rut={rut} setcargaHistorial={setcargaHistorial} cargaHistorial={cargaHistorial}/>
+                    <Vsualizacion historial = {historial} rut={rut} setcargaHistorial={setcargaHistorial} cargaHistorial={cargaHistorial} carga={carga} setcarga={setcarga}/>
                 </div>
                 
             }

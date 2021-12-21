@@ -5,22 +5,26 @@ import Moment from "moment"
 import { Seguimiento } from './odontograma/Seguimiento'
 
 export const Odontograma = (props) => {
-    const {rut} = props
+    const {rut ,carga, setcarga} = props
     const [buscarPieza, setbuscarPieza] = useState("")
     const [piezaRegistro, setpiezaRegistros] = useState("")
-    const [carga, setcarga] = useState("")
     const [seguimiento, setseguimiento] = useState("")
+
+   
+
     useEffect(() => {
-        Axios.get(`https://api-rest-cfedent.herokuapp.com/piezas/${rut}`).then( (response) =>{
+        Axios.get(`http://localhost:5000/piezas/${rut}`).then( (response) =>{
             setpiezaRegistros(response.data)
-            setcarga(carga+1)
+            
         })
        
         
     
     }, [carga])
     
-   
+   const handleOnClick = (e) =>{
+    setcarga(carga+1)
+    }
 
     const handleOnChange = (e) =>{
         setbuscarPieza(e.target.value)
@@ -33,7 +37,7 @@ export const Odontograma = (props) => {
 
     const handleOnSubmit = (e) =>{
         e.preventDefault()
-        Axios.get(`https://api-rest-cfedent.herokuapp.com/piezas/${rut}/${buscarPieza}`).then( (response) =>{
+        Axios.get(`http://localhost:5000/piezas/${rut}/${buscarPieza}`).then( (response) =>{
             setseguimiento(response.data)
         })
   
@@ -46,8 +50,8 @@ export const Odontograma = (props) => {
 
                     <div className='row mt-3'> 
                         <div className="d-flex justify-content-center">
-                            <div className="col-12 form-floating tamaño">
-                                <div className="titulos">Seguimiento de pieza</div>
+                            <div className="col-6 form-floating tamaño ">
+                                <div className="titulos text-center">Seguimiento de pieza  </div>
                             </div>
                         </div>  
                     </div> 
@@ -55,28 +59,51 @@ export const Odontograma = (props) => {
                     <div className='row mt-3'> 
                         <div className="d-flex justify-content-center">
                             <div className="col-12 tamaño">
-                            <select class="form-select" size="5" aria-label="size 3 select example" onChange={handleOnChange}>
+
+                            {
+                                
+                                piezaRegistro[0] === undefined? 
+                                <div>
+                                    <div className="alert alert-warning">No se han encontrado piezas</div>
+                                    <div className="d-flex justify-content-center form-group">
+                                        <div className="col-12 form-floating tamaño d-grid">
+                                            <button className="btn boton " onClick={handleOnClick}>Recargar</button>
+                                        </div>
+                                    </div> 
+                                </div>  
+                                :    
+                                <div>
+                                <select class="form-select" size="5" aria-label="size 3 select example" onChange={handleOnChange}>
                                 <option selected>Seleccione pieza</option>
                                 {
                                 piezaRegistro[0] === undefined?
-                                "no hay"
+                                
+                                ""
                                 :
                                 piezaRegistro.map((r,i) =>{
                                     return <option key={i} value={r.pieza}>{r.pieza}</option>
                                 })
                                 }
-                            </select>
+                                </select>
+                                    <div className="d-flex justify-content-center form-group">
+                                        <div className="col-12 form-floating tamaño d-grid">
+                                            <button className="btn boton ">Buscar</button>
+                                        </div>
+                                    </div>  
+                                </div> 
+                                
+
+                                
+                                
+
+                            }
+
+                            
                             </div>
                         </div>  
                     </div> 
 
-                    <div className='row mt-2'> 
-                        <div className="d-flex justify-content-center form-group">
-                            <div className="col-12 form-floating tamaño d-grid">
-                                <button className="btn boton ">Buscar</button>
-                            </div>
-                        </div>  
-                    </div>    
+
                 </form>
 
                <Seguimiento seguimiento={seguimiento} />

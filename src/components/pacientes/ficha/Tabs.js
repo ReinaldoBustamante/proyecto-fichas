@@ -65,7 +65,7 @@ export const Tabs = (props) => {
         e.preventDefault()
         console.log("click")
         //posteo a api
-        Axios.post('https://api-rest-cfedent.herokuapp.com/fichas',{
+        Axios.post('http://localhost:5000/fichas',{
             rut: rut,
             fecha_nacimiento: nacimiento,
             fecha_ficha: creacion_ficha,

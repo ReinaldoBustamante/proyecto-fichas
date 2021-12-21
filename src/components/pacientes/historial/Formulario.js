@@ -19,7 +19,7 @@ export const Formulario = (props) => {
     const [historiales, sethistoriales] = useState("")
 
     useEffect(() => {
-        Axios.get(`https://api-rest-cfedent.herokuapp.com/historiales-clinicos/${rut}/${añoActual+"-"+mesActual+"-"+hoy}/`).then( (response) =>{
+        Axios.get(`http://localhost:5000/historiales-clinicos/${rut}/${añoActual+"-"+mesActual+"-"+hoy}/`).then( (response) =>{
         sethistoriales(response.data)
         })
     
@@ -59,7 +59,7 @@ export const Formulario = (props) => {
     const handleOnSubmit = (e) => {
         e.preventDefault()
         {historiales[0] === undefined ?
-            Axios.post('https://api-rest-cfedent.herokuapp.com/historiales-clinicos',{
+            Axios.post('http://localhost:5000/historiales-clinicos',{
                 fecha: creacion_historial,
                 detalles: historial.detalles,
                 razon_ingreso: historial.razon_ingreso,

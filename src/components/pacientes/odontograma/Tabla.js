@@ -6,7 +6,7 @@ export const Tabla = (props) => {
     const handleOnClick = () =>{
         registroOdontograma.map((odonto,indexo)=>{
             
-            Axios.post('https://api-rest-cfedent.herokuapp.com/odontograma',{
+            Axios.post('http://localhost:5000/odontograma',{
                 pieza: odonto.pieza,
                 cara: odonto.cara,
                 diagnostico: odonto.diagnostico,

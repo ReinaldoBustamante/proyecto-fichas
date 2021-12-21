@@ -11,9 +11,9 @@ export const Paciente = (props) => {
     const [historial, sethistorial] = useState([])
     const { rut } = useParams()
     const [paciente, setpaciente] = useState("")
-
+    const [carga, setcarga] = useState("")
     useEffect(() => {
-        Axios.get(`https://api-rest-cfedent.herokuapp.com/pacientes/${rut}`).then( (response) =>{
+        Axios.get(`http://localhost:5000/pacientes/${rut}`).then( (response) =>{
             if(response.status === 200){
                 setpaciente(response.data[0])
             }   
@@ -46,8 +46,8 @@ export const Paciente = (props) => {
             </div>
             <div className="tab-content" id="pills-tabContent">
                 <div className="tab-pane fade show active" id="pills-ficha" role="tabpanel" aria-labelledby="pills-ficha-tab"><Ficha rut={rut} paciente={paciente}/></div>
-                <div className="tab-pane fade" id="pills-historial" role="tabpanel" aria-labelledby="pills-historial-tab"><Historial rut ={rut} historial={historial} sethistorial={sethistorial}/></div>
-                <div className="tab-pane fade" id="pills-odontograma" role="tabpanel" aria-labelledby="pills-odontograma-tab"><Odontograma rut={rut} historial={historial}/></div>
+                <div className="tab-pane fade" id="pills-historial" role="tabpanel" aria-labelledby="pills-historial-tab"><Historial rut ={rut} historial={historial} sethistorial={sethistorial} historial={historial} carga = {carga} setcarga={setcarga}/></div>
+                <div className="tab-pane fade" id="pills-odontograma" role="tabpanel" aria-labelledby="pills-odontograma-tab"><Odontograma rut={rut} historial={historial} carga = {carga} setcarga={setcarga}/></div>
             </div>
            
             

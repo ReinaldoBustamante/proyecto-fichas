@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import Axios from "axios"
 import { Visual } from './Visual'
+import Moment from "moment"
+
+
 export const ModalVisualizacion = (props) => {
     const {rut, fecha} = props
     const [datosOdontograma, setdatosOdontograma] = useState("")
     
     
     useEffect(() => {
-        Axios.get(`https://api-rest-cfedent.herokuapp.com/odontograma/${rut}/${fecha}/`).then( (response) =>{
+        Axios.get(`http://localhost:5000/odontograma/${rut}/${Moment(fecha).format("YYYY-MM-DD")}/`).then( (response) =>{
         setdatosOdontograma(response.data)
         })
     

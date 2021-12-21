@@ -4,7 +4,7 @@ import { Formulario } from './Formulario'
 import { Registros } from './Registros'
 
 export const Modal= (props) => {
-    const {fecha, rut, setcargaodontogramas} = props
+    const {fecha, rut, setcargaodontogramas, carga, setcarga} = props
     const [registroOdontograma, setregistroOdontograma] = useState([])
     const [datosOdontograma, setdatosOdontograma] = useState({
         pieza:"",
@@ -27,7 +27,7 @@ export const Modal= (props) => {
                                     <img src={imgodont} />
                                     </div>
                                     <div className='col'>
-                                        <Formulario setdatosOdontograma={setdatosOdontograma} datosOdontograma={datosOdontograma} setregistroOdontograma={setregistroOdontograma} registroOdontograma={registroOdontograma}/>
+                                        <Formulario setdatosOdontograma={setdatosOdontograma} datosOdontograma={datosOdontograma} setregistroOdontograma={setregistroOdontograma} registroOdontograma={registroOdontograma} carga={carga} setcarga={setcarga}/>
                                         <Registros registroOdontograma={registroOdontograma} setregistroOdontograma={setregistroOdontograma} fecha={fecha} rut={rut} setcargaodontogramas={setcargaodontogramas}/>
                                     </div>
                                 </div>

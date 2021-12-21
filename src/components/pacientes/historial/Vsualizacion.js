@@ -5,7 +5,7 @@ import { Modal } from './Modal'
 import { Tabla } from './Tabla'
 
 export const Vsualizacion = (props) => {
-    const {historial, rut, setcargaHistorial, cargaHistorial} = props
+    const {historial, rut, setcargaHistorial, cargaHistorial, carga, setcarga} = props
     return (
         <div>
             <div className="row d-grid justify-content-end">
@@ -14,7 +14,7 @@ export const Vsualizacion = (props) => {
                     <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Nuevo
                     </button>
-                    <Modal rut = {rut} setcargaHistorial = {setcargaHistorial} cargaHistorial={cargaHistorial}/>
+                    <Modal rut = {rut} setcargaHistorial = {setcargaHistorial} cargaHistorial={cargaHistorial} />
                     
                 </div>
 
@@ -22,7 +22,7 @@ export const Vsualizacion = (props) => {
 
             <div classNameName="row ">
                 <div className="col">
-                    <Tabla historial = {historial} rut={rut}/>
+                    <Tabla historial = {historial} rut={rut} carga={carga} setcarga={setcarga}/>
                 </div>
             </div>
         </div>

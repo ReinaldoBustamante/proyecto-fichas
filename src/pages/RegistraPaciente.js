@@ -71,7 +71,7 @@ export const RegistraPaciente= () => {
         }
         else{
             const nacimiento = new Date(datosBasicos.dia+"-"+datosBasicos.mes+"-"+datosBasicos.año)
-            Axios.post('https://api-rest-cfedent.herokuapp.com/pacientes',{
+            Axios.post('http://localhost:5000/pacientes',{
                 id_odontologo: datosBasicos.id_odontologo,
                 nombre: datosBasicos.nombre,
                 sexo: datosBasicos.sexo,

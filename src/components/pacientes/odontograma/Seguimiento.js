@@ -8,7 +8,7 @@ export const Seguimiento = (props) => {
             <div className='col-12'>
             {
                 seguimiento[0] === undefined ?
-                <div className='alert alert-warning'>No existen registros de piezas modificadas</div>
+                ""
                 :
                 <table className="cinereousTable ">
                     <thead>

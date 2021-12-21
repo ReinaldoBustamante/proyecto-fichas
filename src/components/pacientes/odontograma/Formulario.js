@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Formulario = (props) => {
 
-    const {setdatosOdontograma, datosOdontograma, setregistroOdontograma, registroOdontograma} = props
+    const {setdatosOdontograma, datosOdontograma, setregistroOdontograma, registroOdontograma,carga, setcarga} = props
     
     const handleOnChange = (e) =>{
         if (e.target.name ==="pieza"){
@@ -41,6 +41,7 @@ export const Formulario = (props) => {
             diagnostico:"",
             procedimiento:""
         })
+        setcarga(carga+1)
     }
    
  
