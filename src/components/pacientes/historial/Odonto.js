@@ -13,7 +13,7 @@ export const Odonto = (props) => {
    
     const [cargaodontogramas, setcargaodontogramas] = useState(0)
     useEffect(() => {
-        Axios.get(`http://localhost:5000/odontograma/${rut}/${Moment(fecha).format("YYYY-MM-DD")}/`).then( (response) =>{
+        Axios.get(`https://api-rest-cfedent.herokuapp.com/odontograma/${rut}/${Moment(fecha).format("YYYY-MM-DD")}/`).then( (response) =>{
         setodontograma(response.data[0])
         })
     
