@@ -26,7 +26,7 @@ export const BuscarPaciente = (props) => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault()
-        Axios.get(`http://localhost:5000/pacientes/${rut}`).then( (response) => {
+        Axios.get(`https://api-rest-cfedent.herokuapp.com/pacientes/${rut}`).then( (response) => {
             if (response.data.length !== 0){
                 Swal.fire(
                     'Usuario Encontrado',

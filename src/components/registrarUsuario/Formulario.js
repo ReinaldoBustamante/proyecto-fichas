@@ -85,14 +85,14 @@ export const Formulario = (props) => {
 
             //Registrar odontolgoo
 
-            Axios.post('http://localhost:5000/odontologos',{
+            Axios.post('https://api-rest-cfedent.herokuapp.com/odontologos',{
                 nombre: usuario.nombre,
                 rut: usuario.rut,
                 telefono: usuario.telefono,
                 correo: usuario.correo
             }).then((res) => {
                 if(res.status === 200){
-                    Axios.post('http://localhost:5000/usuarios',{
+                    Axios.post('https://api-rest-cfedent.herokuapp.com/usuarios',{
                         username: usuario.username,
                         password: usuario.password,
                         nombre: usuario.nombre,
@@ -119,7 +119,7 @@ export const Formulario = (props) => {
             }) 
         }
         else if(usuario.rol === "administrador"){
-            Axios.post('http://localhost:5000/usuarios',{
+            Axios.post('https://api-rest-cfedent.herokuapp.com/usuarios',{
                 username: usuario.username,
                 password: usuario.password,
                 nombre: usuario.nombre,
@@ -142,14 +142,14 @@ export const Formulario = (props) => {
         }
         else if(usuario.rol === "tons"){
             //Registrar odontolgoo
-            Axios.post('http://localhost:5000/tons',{
+            Axios.post('https://api-rest-cfedent.herokuapp.com/tons',{
                 nombre: usuario.nombre,
                 rut: usuario.rut,
                 telefono: usuario.telefono,
                 correo: usuario.correo
             }).then((response) => {
                 if(response.status === 200){
-                    Axios.post('http://localhost:5000/usuarios',{
+                    Axios.post('https://api-rest-cfedent.herokuapp.com/usuarios',{
                         username: usuario.username,
                         password: usuario.password,
                         nombre: usuario.nombre,

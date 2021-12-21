@@ -16,7 +16,7 @@ import { FiebreReumatica } from '../FiebreReumatica'
 import { TratamientoFiebreReumatica } from '../TratamientoFiebreReumatica'
 import { ProblemasRenales } from '../ProblemasRenales'
 
-import Moment from "moment"
+
 export const SeccionUno = (props) => {
     const {datosFicha} = props
     

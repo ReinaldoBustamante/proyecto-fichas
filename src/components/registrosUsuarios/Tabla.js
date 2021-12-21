@@ -20,7 +20,7 @@ export const Tabla = () => {
     })
 
     useEffect(() => {
-        Axios.get('http://localhost:5000/usuarios').then( (response) =>{
+        Axios.get('https://api-rest-cfedent.herokuapp.com/usuarios').then( (response) =>{
             setUsuarios(response.data)
         })
         console.log("montado")
@@ -44,10 +44,10 @@ export const Tabla = () => {
                 confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    Axios.delete(`http://localhost:5000/odontologos/${e.target.value}`)
+                    Axios.delete(`https://api-rest-cfedent.herokuapp.com/odontologos/${e.target.value}`)
                     .then(res => {
                         if(res.status === 200){
-                            Axios.delete(`http://localhost:5000/usuarios/${e.target.value}`)
+                            Axios.delete(`https://api-rest-cfedent.herokuapp.com/usuarios/${e.target.value}`)
                             .then(res => {
                                 if(res.status === 200){
                                     Toast.fire({
@@ -73,10 +73,10 @@ export const Tabla = () => {
                 confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    Axios.delete(`http://localhost:5000/tons/${e.target.value}`)
+                    Axios.delete(`https://api-rest-cfedent.herokuapp.com/tons/${e.target.value}`)
                     .then(res => {
                         if(res.status === 200){
-                            Axios.delete(`http://localhost:5000/usuarios/${e.target.value}`)
+                            Axios.delete(`https://api-rest-cfedent.herokuapp.com/usuarios/${e.target.value}`)
                             .then(res => {
                                 if(res.status === 200){
                                     Toast.fire({

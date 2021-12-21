@@ -4,7 +4,6 @@ import { SeccionDos } from './secciones/SeccionDos'
 import { SeccionTres } from './secciones/SeccionTres'
 import { SeccionUno } from './secciones/SeccionUno'
 
-
 import Swal from 'sweetalert2'
 import "../../../index.css"
 export const Tabs = (props) => {
@@ -15,9 +14,8 @@ export const Tabs = (props) => {
     const añoActual = fecha.getFullYear();
     const hoy = fecha.getDate();
     const mesActual = fecha.getMonth() + 1; 
-    const creacion_ficha = new Date(añoActual+"-"+mesActual+"-"+hoy)
     const nacimiento = paciente.fecha_nacimiento
-
+    const creacion_ficha = hoy+"/"+mesActual+"/"+añoActual
     const [fichaPaciente, setfichaPaciente] = useState({
         padre_con_vida: 0, // *
         enfermedad_padre: "", // *
@@ -65,7 +63,7 @@ export const Tabs = (props) => {
         e.preventDefault()
         console.log("click")
         //posteo a api
-        Axios.post('http://localhost:5000/fichas',{
+        Axios.post('https://api-rest-cfedent.herokuapp.com/fichas',{
             rut: rut,
             fecha_nacimiento: nacimiento,
             fecha_ficha: creacion_ficha,

@@ -8,7 +8,7 @@ export const Ficha = (props) => {
     const [datosFicha, setDatosFicha] = useState("")
     const [cargaPagina, setcargaPagina] = useState(0)
     useEffect(() => {
-        Axios.get(`http://localhost:5000/fichas/${rut}`).then( (response) =>{
+        Axios.get(`https://api-rest-cfedent.herokuapp.com/fichas/${rut}`).then( (response) =>{
             if(response.status === 200){
                 setDatosFicha(response.data[0])
             }   

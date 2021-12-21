@@ -32,8 +32,6 @@ export const RegistraPaciente= () => {
         profesion: '',
         lugarTrabajo: ''
     })
-    
-    console.log(datosBasicos)
 
 
     /*const [datosClinicos, setDatosClinicos] = useState({
@@ -70,13 +68,12 @@ export const RegistraPaciente= () => {
             })
         }
         else{
-            const nacimiento = new Date(datosBasicos.dia+"-"+datosBasicos.mes+"-"+datosBasicos.año)
-            Axios.post('http://localhost:5000/pacientes',{
+            Axios.post('https://api-rest-cfedent.herokuapp.com/pacientes',{
                 id_odontologo: datosBasicos.id_odontologo,
                 nombre: datosBasicos.nombre,
                 sexo: datosBasicos.sexo,
                 rut: datosBasicos.rut,
-                fecha_nacimiento: nacimiento,
+                fecha_nacimiento: datosBasicos.dia+"/"+datosBasicos.mes+"/"+datosBasicos.año,
                 telefono: datosBasicos.telefono,
                 celular: datosBasicos.celular,
                 domicilio: datosBasicos.domicilio,

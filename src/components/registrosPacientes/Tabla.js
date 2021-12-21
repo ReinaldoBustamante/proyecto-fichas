@@ -7,33 +7,26 @@ export const Tabla = () => {
     const [pacientes, setPacientes] = useState([])
     const [carga, setcarga] = useState(0)
     useEffect(() => {
-        Axios.get('http://localhost:5000/pacientes').then( (response) =>{
+        Axios.get('https://api-rest-cfedent.herokuapp.com/pacientes').then( (response) =>{
         setPacientes(response.data)
         })
     }, [carga])
     
     const handleOnClick = (e) => {
-        console.log(e.target.value)
-        Axios.delete(`http://localhost:5000/fichas/${e.target.value}`)
+        Axios.delete(`https://api-rest-cfedent.herokuapp.com/fichas/${e.target.value}`)
         .then(res => {
             if(res.status === 200){
-                Axios.delete(`http://localhost:5000/historiales-clinicos/${e.target.value}`)
+                Axios.delete(`https://api-rest-cfedent.herokuapp.com/historiales-clinicos/${e.target.value}`)
                 .then(res => {
                     if(res.status === 200){
-                        Axios.delete(`http://localhost:5000/piezas/${e.target.value}`)
+                        Axios.delete(`https://api-rest-cfedent.herokuapp.com/pacientes/${e.target.value}`)
                         .then(res => {
                             if(res.status === 200){
-                                Axios.delete(`http://localhost:5000/pacientes/${e.target.value}`)
-                                .then(res => {
-                                    if(res.status === 200){
-                                        console.log("se elimino correctamente")
-                                        setcarga(carga+1)
-                                    }
-                                })
+                                console.log("se elimino correctamente")
                                 setcarga(carga+1)
                             }
                         })
-                      
+                        setcarga(carga+1)
                     }
                 })
             }

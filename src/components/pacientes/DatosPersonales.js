@@ -1,8 +1,8 @@
 import React from 'react'
-import Moment from "moment"
+
 export const DatosPersonales = (props) => {
     const {paciente} = props
-   
+    
     return (
         <div>
             {paciente === "" ?
@@ -16,7 +16,7 @@ export const DatosPersonales = (props) => {
                             <span className="h5">ID: <span className="h6">{paciente.rut}</span></span>
                         </div>
                         <div className="col">
-                            <span className="h5">Nacimiento: <span className="h6">{paciente.fecha_nacimiento.split("T")[0]}</span></span>
+                            <span className="h5">Nacimiento: <span className="h6">{paciente.fecha_nacimiento}</span></span>
                         </div>
                         <div className="col">
                             <span className="h5">Sexo: <span className="h6">{paciente.sexo}</span></span>

@@ -7,7 +7,7 @@ export const DatosBasicos = (props) => {
     const [odontologos, setodontologos] = useState([])
 
     useEffect(() => {
-        Axios.get('http://localhost:5000/odontologos').then( (response) =>{
+        Axios.get('https://api-rest-cfedent.herokuapp.com/odontologos').then( (response) =>{
         setodontologos(response.data)
         })
         
