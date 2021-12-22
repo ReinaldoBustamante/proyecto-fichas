@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { SeccionDos } from './visualizacion/seccion/SeccionDos'
 import { SeccionTres } from './visualizacion/seccion/SeccionTres'
 import { SeccionUno } from './visualizacion/seccion/SeccionUno'
-
+import Moment from "moment"
 
 
 export const VisualizarFicha = (props) => {
