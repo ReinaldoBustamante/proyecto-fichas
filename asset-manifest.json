@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/proyecto-fichas/static/css/main.d879e586.css",
+    "main.js": "/proyecto-fichas/static/js/main.ed20c3fd.js",
+    "static/media/dientes.jpg": "/proyecto-fichas/static/media/dientes.c3270dda750ee077e267.jpg",
+    "index.html": "/proyecto-fichas/index.html",
+    "main.d879e586.css.map": "/proyecto-fichas/static/css/main.d879e586.css.map",
+    "main.ed20c3fd.js.map": "/proyecto-fichas/static/js/main.ed20c3fd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d879e586.css",
+    "static/js/main.ed20c3fd.js"
+  ]
+}
